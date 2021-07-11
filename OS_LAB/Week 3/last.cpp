@@ -1,4 +1,4 @@
-//optimal page ref: page replacement algo
+//page replacement algo
 
 #include <stdio.h>
 
@@ -63,16 +63,16 @@ int main(){
 				//int min = -1;
 				//check all elements in queue so ti iterate, using while loop
 				int len_q[page_frame] = {0};
-				int temp_end = 0;
-				for(temp_end=0;temp_end<page_frame;temp_end++){
+				int end = 0;
+				for(end=0;end<page_frame;end++){
 					//check if it is there
 					//if there, take the value of index into temp_min
 					//out from loop, if used == 1 break; ---and temp_min<min;---					
-					int var = queue[temp_end];
-					printf("%d \t %d---",var,temp_end);
-					for(x=i+1;x<page_len;x++){
+					int var = queue[end];
+					printf("%d \t %d---",var,end);
+					for(x=0;x<i;x++){
 						if(var == page_ref[x]){
-							len_q[temp_end]++;
+							len_q[end]=x;
 						}
 					}
 					
