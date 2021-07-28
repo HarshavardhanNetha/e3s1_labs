@@ -23,7 +23,7 @@ class Books{
 	}
 
 	public void sellBook(int count){
-		if(count<bookCount){
+		if(count<=bookCount){
 			bookCount-=count;
 			System.out.println("Thanks for the purchase.");
 			System.out.println("Remaining Books: "+bookCount);
@@ -64,6 +64,7 @@ class Customers{
 class Library{
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		Scanner inpInt = new Scanner(System.in);
 		Customers c[] = new Customers[3];
 
 		for(int i=0; i<3;i++)
@@ -88,12 +89,13 @@ class Library{
 		for(int i=0;i<3;i++)
 			b[i].printBookData();
 
-		for(int j=0;j<3;j++){
+		for(int k=0;k<3;k++){
+			int flag=0;
+
 			System.out.print("Enter Name:");
 			String enteredName = input.nextLine();
 
 
-			int flag=0;
 			for(int i=0;i<3;i++){
 				if(c[i].cName.equals(enteredName)){
 					System.out.println("Welcome...");
@@ -110,13 +112,13 @@ class Library{
 				System.out.print("Enter Book Name:");
 				String enteredBookName = input.nextLine();
 				System.out.print("Enter count:");
-				int numOfBooks = input.nextInt();
+				int numOfBooks = inpInt.nextInt();
 
 				int bflag = 0;
 
-				for(int i=0;i<3;i++){
-					if(b[i].bookName.equals(enteredBookName)){
-						b[i].sellBook(numOfBooks);
+				for(int j=0;j<3;j++){
+					if(b[j].bookName.equals(enteredBookName)){
+						b[j].sellBook(numOfBooks);
 						bflag=1;
 						break;
 					}
