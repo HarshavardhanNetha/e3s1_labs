@@ -86,7 +86,7 @@ int main(){
 		printf("%d ",list[i]);
 	printf("\n");
 	
-	//execute fcfs logic
+	//execute fcfs logic until n+1
 	for(i=0;i<n+1;i++){
 		if(list[i]>prev){
 			sum+=list[i]-prev;
