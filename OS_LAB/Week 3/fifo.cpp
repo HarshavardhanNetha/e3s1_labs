@@ -57,6 +57,9 @@ int main(){
 			else{
 				//increase rear dequeue the first arrived value
 				end++;
+				if(end>=page_frame){
+					end=0;					
+				}
 				queue[end]=temp;
 				printf("%d\tMiss\t",temp);
 				for(k=0;k<page_frame;k++)

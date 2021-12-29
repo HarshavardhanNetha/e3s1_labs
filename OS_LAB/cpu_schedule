@@ -1,0 +1,13 @@
+CPU Scheduling:
+- Non preemptive
+- Preemptive
+
+- NP: SJF
+Shortest Job First
+-- Compare arrival time and based on readiness, take the process with shortest burt time.
+
+- PE: SRTF
+Shortest Remaining Time First
+-- Same as above, but check for each second.
+
+
